@@ -9,11 +9,11 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 radio.onReceivedMessage(RadioMessage.P1Ready, function () {
-    if (PlayerSelect == 2) {
+    if (PlayerSelect == 2 && Connected == false) {
         Connected = true
         radio.sendMessage(RadioMessage.P2Ready)
-        P1 = game.createSprite(2, 2)
-        P2 = game.createSprite(2, 2)
+        P1 = game.createSprite(1, 2)
+        P2 = game.createSprite(3, 2)
     }
 })
 function PlayerSelector () {
@@ -114,11 +114,11 @@ function Change_direction () {
     }
 }
 radio.onReceivedMessage(RadioMessage.P2Ready, function () {
-    if (PlayerSelect == 1) {
+    if (PlayerSelect == 1 && Connected == false) {
         Connected = true
         radio.sendMessage(RadioMessage.P1Ready)
-        P1 = game.createSprite(2, 2)
-        P2 = game.createSprite(2, 2)
+        P1 = game.createSprite(1, 2)
+        P2 = game.createSprite(3, 2)
     }
 })
 let P2YOLD = 0
